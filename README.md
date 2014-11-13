@@ -1,4 +1,6 @@
 sqljson
 =======
 
-lib para executar queries sql em arrays JSON
+lib to query JSON with SQL syntax
+
+- current syntax mysql
