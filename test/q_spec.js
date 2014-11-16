@@ -13,10 +13,7 @@ describe('q',function(){
 				'content':'aosndoaksnda'
 			}];
 
-		    assert.equal(q.select(selectColumns).from(table), [{
-		    	'id': 'asd',
-		    	'title':'asdasdas'
-		    }]);
+		    assert.equal(q.select(selectColumns).from(table), [{'id': 'asd'},{'title':'asdasdas'}]);
 	    });
    	});
 });
