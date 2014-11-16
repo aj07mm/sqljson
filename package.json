@@ -1,7 +1,7 @@
 {
   "name": "sqljson",
   "version": "1.0.0",
-  "description": "sqljson =======",
+  "description": "sqljson",
   "main": "q.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,19 +1,28 @@
 var q = {
 		'table' : [],
+		'setTableData': function(data){
+			this.table.push(data);
+		},
 		'select' : function(columns){
+
 			var result = [];
 			
 			_.forEach(this,function(row,index){
+				rowResult = {};
 				_.forEach(columns,function(col,index){
-					result.push(row[col]); 
+					rowResult[col] = row[col]
 				});
+				result.push(row[col]); 
 			});
 
 			return result;
 		},
-		'from' : function(table){
-			q.table.push(table);
-			return table;
+		'from' : function(tableData){
+			this.setTableData(tableData);
+			return this;
 		}
 
 };
+
+
+module.exports = q;

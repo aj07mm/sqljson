@@ -3,7 +3,7 @@
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 //     Underscore may be freely distributed under the MIT license.
 
-(function() {
+_ = function() {
 
   // Baseline setup
   // --------------
@@ -1412,4 +1412,6 @@
       return _;
     });
   }
-}.call(this));
+};
+
+_.call(this);
