@@ -1,12 +1,14 @@
 var q = {
+		
 		'table' : [],
-		'setTableData': function(data){
-			this.table.push(data);
-		},
-		'select' : function(columns){
+		
+		'select' : function(columns) {
+			if(! _.isArray(columns) ) {
+				throw "columns must be an array"
+			}
 
 			var result = [];
-			
+
 			_.forEach(this,function(row,index){
 				rowResult = {};
 				_.forEach(columns,function(col,index){
@@ -17,9 +19,10 @@ var q = {
 
 			return result;
 		},
-		'from' : function(tableData){
-			this.setTableData(tableData);
-			return this;
+		
+		'from' : function(table){
+			q.table.push(table);
+			return table;
 		}
 
 };
