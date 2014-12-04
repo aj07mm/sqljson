@@ -23,4 +23,7 @@
   "dependencies": {
     "underscore": "^1.7.0"
   }
+  "scripts": {
+    "test": "mocha test/*"
+  },
 }
