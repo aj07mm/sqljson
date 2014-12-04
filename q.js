@@ -1,31 +1,31 @@
 var q = {
 		
-		'table' : [],
-		
-		'select' : function(columns) {
+		_table : [],
+		_columns : [],
+
+		select : function(columns) {
+
 			if(! _.isArray(columns) ) {
 				throw "columns must be an array"
 			}
 
-			var result = [];
+			q._columns = columns;	
 
-			_.forEach(this,function(row,index){
-				rowResult = {};
-				_.forEach(columns,function(col,index){
-					rowResult[col] = row[col]
-				});
-				result.push(row[col]); 
-			});
-
-			return result;
+			return this;
 		},
 		
-		'from' : function(table){
-			q.table.push(table);
-			return table;
+		from : function(table) {
+			q._table = 	table;	
+			var result = [];
+            _.forEach(q._table,function(row) {
+            	var resultRow = {};
+                _.forEach(q._columns,function(colValue,index){
+                	resultRow[index] = row[index];
+                });
+                result.push(resultRow);
+            });
+			
+			return result;
 		}
 
 };
-
-
-module.exports = q;
