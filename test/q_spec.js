@@ -1,19 +1,27 @@
-var assert = require('assert');
-var q = require('../q.js');
+test('select(columns) from(table)', function() {
 
+    var _selectColumns = ['id','title'],
+        _table = [{'id':'10', 'title':'Money for Nothing'}];
 
-describe('q',function(){
-	context('3 columns, 1 table', function(){
-        it('should return 1', function(){
+    sqljson.select(_selectColumns).from(_table);
 
-        	selectColumns = ['id','title'];
-            table = [{
-				'id':'asd',
-				'title':'asdasdas',
-				'content':'aosndoaksnda'
-			}];
+    equal(sqljson.table.length, 1, 'table should contain a record');
 
-		    assert.equal(q.select(selectColumns).from(table), [{'id': 'asd'},{'title':'asdasdas'}]);
-	    });
-   	});
+});
+
+test('Passing invalid columns', function() {
+
+    var _selectColumns = [null,{id:10}];
+
+    throws(function() { sqljson.select(_selectColumns) }, 'the element null is not a string', 'throws a exception');
+
+});
+
+test('Passing invalid table', function() {
+
+    var _selectColumns = ['id','title'],
+        _table = [null];
+
+    throws(function() { sqljson.select(_selectColumns).from(_table) }, 'the element null is not a object', 'throws a exception');
+
 });

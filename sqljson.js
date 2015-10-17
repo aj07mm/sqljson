@@ -17,7 +17,7 @@ var sqljson = {
             if(_.isString(element))
                 sqljson.columns.push(element);
             else
-                throw 'the element ' + element.toString() + ' is not a string';
+                throw 'the element ' + element + ' is not a string';
         });
 
         return this;
@@ -34,7 +34,7 @@ var sqljson = {
             if(_.isObject(element))
                 sqljson.table.push(element);
             else
-                throw 'the element ' + element.toString() + ' is not a object';
+                throw 'the element ' + element + ' is not a object';
         });
 
         return this;
