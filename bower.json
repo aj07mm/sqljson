@@ -10,6 +10,7 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "underscore": "~1.8.3"
+    "underscore": "~1.8.3",
+    "qunit": "~1.19.0"
   }
 }

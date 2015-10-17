@@ -1,10 +1,10 @@
 {
   "name": "sqljson",
   "version": "1.0.0",
-  "description": "sqljson =======",
+  "description": "lib to query JSON via SQL syntax",
   "main": "q.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node-qunit-phantomjs test/test.html"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/aj07mm/sqljson/issues"
   },
-  "homepage": "https://github.com/aj07mm/sqljson"
+  "homepage": "https://github.com/aj07mm/sqljson",
+  "dependencies": {
+    "node-qunit-phantomjs": "^1.2.1"
+  }
 }
