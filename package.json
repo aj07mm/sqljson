@@ -22,8 +22,8 @@
   "homepage": "https://github.com/aj07mm/sqljson",
   "dependencies": {
     "underscore": "^1.7.0"
-  }
+  },
   "scripts": {
     "test": "mocha test/*"
-  },
+  }
 }

@@ -1,3 +1,4 @@
+var _ = require('underscore');
 var q = {
 		
 		_table : [],
@@ -24,8 +25,10 @@ var q = {
                 });
                 result.push(resultRow);
             });
-			
-			return result;
+
+			return table;
 		}
 
 };
+
+exports.q = q;
