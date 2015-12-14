@@ -28,6 +28,12 @@ describe('q',function(){
 
 			assert.deepEqual(q.select(cols).from(table), table);
 		})
+		it('id, age, location from table and foo random',function(){
+			cols = ['id', 'age', 'location'];
+			table = [{id:123, foo:555}, {id:123, age:555}, {id:123, age:555, location: 'asdasdasd'}];
+
+			assert.deepEqual(q.select(cols).from(table), table);
+		})
 	});
 	context('select',function(){
 		it('* from table',function(){
