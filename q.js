@@ -10,23 +10,27 @@ var q = {
 				throw "columns must be an array"
 			}
 
-			q._columns = columns;	
+			q._columns = columns;
 
 			return this;
 		},
 		
 		from : function(table) {
-			q._table = 	table;	
+			q._table = 	table;
+			if(q._columns == ['*']){
+				return table;
+			}
 			var result = [];
             _.forEach(q._table,function(row) {
-            	var resultRow = {};
-                _.forEach(q._columns,function(colValue,index){
-                	resultRow[index] = row[index];
-                });
-                result.push(resultRow);
+            	for (var col in q._columns) {
+            		if( col in Object.keys(row)){
+            			result.push(row);
+            			break
+            		}
+				}
             });
 
-			return table;
+			return result;
 		}
 
 };
